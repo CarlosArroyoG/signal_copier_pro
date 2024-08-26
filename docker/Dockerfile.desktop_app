@@ -1,0 +1,10 @@
+FROM python:3.9
+
+WORKDIR /app
+
+COPY desktop_app/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY desktop_app .
+
+CMD ["python", "main.py"]
